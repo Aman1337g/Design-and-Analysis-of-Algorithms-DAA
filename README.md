@@ -14,6 +14,8 @@ It is also a step by step procedure to solve a computational problem.<br>
 | Hardware and Operating System independent. | Hardware and Hardware and Operating System dependent. |
 | We analyze an algorithm. | We test a program. |
 
+<br>
+
 ## 1.1 Priori Analysis and Posteriori Testing
 
 | Priori Analysis | Posteriori Testing |
@@ -23,6 +25,8 @@ It is also a step by step procedure to solve a computational problem.<br>
 | Hardware independent | Hardware dependent |
 | We get time and space **function** | We watch time and bytes consumed |
 
+<br>
+
 ## 1.2 Characteristics of Algorithm 
 
 1. Input - takes 0 or more inputs.
@@ -30,6 +34,8 @@ It is also a step by step procedure to solve a computational problem.<br>
 3. Definiteness - every statement must be clear. (eg - root(-1) cannot be read as real number).
 4. Finiteness - duration of algorithm must be finite.
 5. Effectiveness - should not have any unnecessary statements.
+
+<br>
 
 ## 1.3 How to Analyze an Algorithm
 
@@ -54,6 +60,8 @@ So , time taken = f(n) = 3 (constant) OR Order of 1 = O(1)
 
 2. Space Analysis - parameter used = a, b and local variable = temp<br>
 So , S(n) = 1+1+1 = 3 words (constant) OR Order of 1 = O(1)
+
+<br>
 
 ## 1.4 Frequency Count Method
 
@@ -140,3 +148,103 @@ Algorithm multiply(A, B, n)
     | k | 1 word |
 
     So , S(n) = 3*(n)^2 + 4 OR O(n^2)
+
+<br>
+
+## 1.5.1 Time Complexity #1
+
+1. a)
+```
+for(i=0; i<n; i++) {
+    // statements;      <--- n unit time
+}
+```
+So, Time Complexity = Order of n = O(n)
+    
+b)
+```
+for(i=n; i<0; i--) {
+    // statements;      <--- n unit time
+}
+```
+So, Time Complexity = Order of n = O(n)
+
+2. a)
+```
+for(i=1; i<n; i+2) {
+    // statements;      <--- n/2 unit time
+}
+```
+So, Time Complexity = Order of n/2 = O(n/2)
+
+b)
+```
+for(i=1; i<n; i+a) {    // Where a = positive number
+    // statements;      <--- n/a unit time
+}
+```
+So, Time Complexity = Order of n/a = O(n/a)
+
+3. a)     
+
+```
+for(i=0; i<n; i++)                             <--- (n+1) unit time
+{
+    for(j=0; j<n; j++)                         <--- n*(n+1) unit time
+    {
+        // statements;                         <--- n*n unit time
+    }
+}
+```
+So, Time Complexity = Order of n^2 = O(n^2)
+
+b)   
+
+```
+for(i=0; i<n; i++)                             
+{
+    for(j=0; j<i; j++)                         
+    {
+        // statements;                         
+    }
+}
+```
+
+### **Tracing this code :**
+
+| i | j | No. of times run |
+|---|---|---|
+| 0 | 0(x) | 0 |
+| 1 | 0, 1(x) | 1 |
+| 2 | 0, 1, 2(x) | 2 |
+| 3 | 0, 1, 2, 3(x) | 3 |
+
+This will continue till i = n, j = 0, 1, 2, 3, 4, .... , n-1
+
+So, Time Complexity = f(n) = 0 + 1 + 2 + 3 + ... + n = (n*(n+1))/2 . So , order of n^2 = O(n^2).
+
+4. a)     
+
+```
+p=0;
+for(i=1; p<=n; i++)     <--- (n+1) unit time
+{
+    p = p + i;
+}
+```
+### **Tracing this code :**
+
+| i | p | No. of times run |
+|---|---|---|
+| 1 | 0+1=1 | 1 |
+| 2 | 1+2=3 | 2 |
+| 3 | 1+2+3 | 3 |
+| 4 | 1+2+3+4 | 3 |
+
+Let it runs 'k' times such that 'p' becomes > n ,<br>
+so  k*(k+1)>n<br>
+=> k^2>n<br>
+=> k>root(n)<br>
+So, Time Complexity = Order of n^(1/2) = O(root(n))
+
+<br>
