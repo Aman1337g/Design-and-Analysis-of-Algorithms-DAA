@@ -159,7 +159,7 @@ for(i=0; i<n; i++) {
     // statements;      <--- n unit time
 }
 ```
-So, Time Complexity = Order of n = O(n)
+So, Time Complexity = Order of n = ```O(n)```
     
 b)
 ```
@@ -167,7 +167,7 @@ for(i=n; i<0; i--) {
     // statements;      <--- n unit time
 }
 ```
-So, Time Complexity = Order of n = O(n)
+So, Time Complexity = Order of n = ```O(n)```
 
 2. a)
 ```
@@ -175,7 +175,7 @@ for(i=1; i<n; i+2) {
     // statements;      <--- n/2 unit time
 }
 ```
-So, Time Complexity = Order of n/2 = O(n/2)
+So, Time Complexity = Order of n/2 = ```O(n)```
 
 b)
 ```
@@ -183,7 +183,7 @@ for(i=1; i<n; i+a) {    // Where a = positive number
     // statements;      <--- n/a unit time
 }
 ```
-So, Time Complexity = Order of n/a = O(n/a)
+So, Time Complexity = Order of n/a = ```O(n)```
 
 3. a)     
 
@@ -196,7 +196,7 @@ for(i=0; i<n; i++)                             <--- (n+1) unit time
     }
 }
 ```
-So, Time Complexity = Order of n^2 = O(n^2)
+So, Time Complexity = Order of n^2 = ```O(n^2)```
 
 b)   
 
@@ -221,7 +221,7 @@ for(i=0; i<n; i++)
 
 This will continue till i = n, j = 0, 1, 2, 3, 4, .... , n-1
 
-So, Time Complexity = f(n) = 0 + 1 + 2 + 3 + ... + n = (n*(n+1))/2 . So , order of n^2 = O(n^2).
+So, Time Complexity = f(n) = 0 + 1 + 2 + 3 + ... + n = (n*(n+1))/2 . So , order of n^2 = ```O(n^2)```.
 
 4. a)     
 
@@ -242,9 +242,123 @@ for(i=1; p<=n; i++)     <--- (n+1) unit time
 | 4 | 1+2+3+4 | 3 |
 
 Let it runs 'k' times such that 'p' becomes > n ,<br>
-so  k*(k+1)>n<br>
+so  (k*(k+1))/2 > n<br>
 => k^2>n<br>
 => k>root(n)<br>
-So, Time Complexity = Order of n^(1/2) = O(root(n))
+So, Time Complexity = Order of n^(1/2) = ```O(root(n))```
+
+***Main idea is to find to number of times the code will run till terminating condition is reached***
 
 <br>
+
+## 1.5.2 Time Complexity #2
+
+5.
+```
+for(i=1; i<n; i=i*2) {
+    // statements;
+}
+```
+### **Tracing this code :**
+
+| i |
+|---|
+| 1 |
+| 2*2 |
+| (2^2)*2 |
+| (2^3)*2 |
+
+Let this continues for k times such that 'i' becomes greater than or equal to n<br>
+=> i>=n<br>
+=> 2^k >= n<br>
+=> k = log(n) on base 2
+
+So, Time Complexity = Order of log(n) = O(log(n)) OR = ```O(ceil(log(n)))```
+
+OR, we can look it as i = 1x2x2x2x2x.....x till 'k' times when i >= n => 2^k = n or ```k = log(n) on base 2```
+
+6.
+```
+for(i=n; i>=1; i=i/2) {
+    // statements;
+}
+```
+### **Tracing this code :**
+
+| i |
+|---|
+| n |
+| n/2 |
+| (n/2)/2 |
+| (n/(2^2))/2 |
+
+Let this continues for k times such that 'i' becomes less than 1<br>
+=> i<1<br>
+=> n/(2^k) < 1<br>
+=> k = log(n) on base 2
+
+So, Time Complexity = Order of log(n) = O(log(n)) OR = ```O(ceil(log(n)))```
+
+OR, we can look it as i = n/2/2/2/2/...../ till 'k' times when i < 1 => n/(2^k) = 1 or ```k = log(n) on base 2```
+
+7.    
+
+```
+for(i=1; i*i<n; i++)                             
+{
+    // statements;      
+}
+```
+Now, this code will run until i*i >= n<br>
+=> 'i' becomes root(n)<br>
+So, Time Complexity = Order of n^(1/2) = ```O(root(n))```
+
+8.     
+```
+for(i=0; i<n; i++)
+{
+    // statements;      <--- n unit time
+}
+for(j=0; j<n; j++)      
+{
+    // statements;      <--- n unit time
+}
+```
+So, Time Complexity = Order of (n+n) = O(2n) = ```O(n)```
+
+9.     
+```
+p=0;
+for(i=1; i<n; i=i*2)
+{
+    p++;      <--- log(n) unit time , so p will become log(n)
+}
+for(j=1; j<p; j=j*2)      
+{
+    // statements;      <--- log(p) unit time
+}
+```
+So, Time Complexity = Order of log(p) = ```O(log(log(n)))``` [As p = log(n)]
+
+9.     
+```
+for(i=1; i<n; i=i++)        <--- n unit time [you can take it 'n' instead of 'n+1']
+{
+    for(j=1; j<n; j=j*2)    <--- n*log(n) unit time
+    {
+        // statements;      <--- n*log(n) unit time
+    }
+}
+```
+So, Time Complexity = Order of (2n*log(n) + n) = ```O(n(log(n)))```
+
+**Cases we have disscused so far :**
+
+| Case | Time Complexity |
+|---|---|
+| for(i=0; i<n; i++) | O(n) |
+| for(i=0; i<n; i=i+2) | O(n/2) = O(n) |
+| for(i=n; i>1; i--) | O(n) |
+| for(i=1; i<n; i=i*2) | O(log(n)) , base = 2 |
+| for(i=1; i<n; i=i*3) | O(log(n)) , base = 3 |
+| for(i=n; i>1; i=i/2) | O(log(n)) , base = 2 |
