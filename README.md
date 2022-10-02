@@ -241,7 +241,7 @@ for(i=1; p<=n; i++)     <--- (n+1) unit time
 | 1 | 0+1=1 | 1 |
 | 2 | 1+2=3 | 2 |
 | 3 | 1+2+3 | 3 |
-| 4 | 1+2+3+4 | 3 |
+| 4 | 1+2+3+4 | 4 |
 
 Let it runs 'k' times such that 'p' becomes > n ,<br>
 so  (k*(k+1))/2 > n<br>
@@ -365,3 +365,111 @@ So, Time Complexity = Order of (2n*log(n) + n) = ```O(n(log(n)))```
 | for(i=1; i<n; i=i*3) | O(log(n)) , base = 3 |
 | for(i=n; i>1; i=i/2) | O(log(n)) , base = 2 |
 | for(i=1; i*i<n; i++) | O(root(n)) |
+
+### 1.5.3 Time Complexity of While and if #3
+
+1. a)
+```
+i=0;                <--- 1 unit time
+while(i<n) {        <--- (n+1) unit time [n times true and 1 time false]
+    // statements;  <--- n unit time 
+    i++;            <--- n unit time
+}
+```
+So, time taken = f(n) = 1 + (n+1) + n + n = 3n+2 = Order of n = ```O(n)```
+
+b) Equivalent for loop
+```
+for(int i = 0; i<n; i++) {
+    // statements;
+}
+```
+So, time taken = 3n+2 = 1 (for i=0) + (n+1) (for i<n) + n (i++ -> updation) + n (for statements).<br>
+If we had not consider time for i=0 and i++ like in previous section , time taken will be equal to (2n+1) = ```O(n)``` [so, nothing is different]
+> So, any **for loop** can be changed to **while loop** and vice-versa.
+
+2.
+```
+a=1;
+while(a<b) {
+    stmt;
+    a=a*2;
+}
+```
+
+**Tracing the code**
+| i | |
+|---|---|
+| 1|
+| 1x2 = 2|
+|2x2 = 4|
+|4x2 = 8|
+|8x2 = 16|
+k times...
+| 2^k ||
+
+Terminate when 'a' becomes greater than or equal to 'b' => 2^k>=b => 2^k=b => k = log(b) on base 2<br>
+So, time taken = f(b) = log(b) => f(n) = log(n) . So, order of n = O(n).
+
+3.
+```
+i = n;
+while(i>1) {
+    stmt;
+    i=i/2;
+}
+```
+Let the loop runs for k times until i<=1 => n/(2^k) <= 1 => ```k = log(n) on base 2```
+So, time taken = f(n) = log(n) => ```O(log(n))``` 
+
+4. a)
+```
+i=1;
+k=1;
+while(k<n) {
+    stmt;
+    k=k+i;
+    i++;
+}
+```
+
+### **Tracing this code :**
+
+| i (becomes) | k | No. of times run |
+|---|---|---|
+| 1 | 1 | Initially |
+| 2 | 1+1=2 | 1 |
+| 3 | 2+2 | 2 |
+| 4 | 2+2+3 | 3 |
+| 5 | 2+2+3+4 | 4 |
+| 6 | 2+2+3+4+5 | 5 |
+| m times...| 2+2+3+4+5+...+(m-1)| Sum of first n natural numbers = (m*(m+1))/2
+
+Let it runs 'm' times such that 'k' becomes >= n ,<br>
+so  (m*(m+1))/2 >= n<br>
+=> m^2>=n  [ROUGHLY]<br>
+=> m>=root(n)<br>
+So, Time Complexity = Order of n^(1/2) = ```O(root(n))```
+
+b) Equivalent for loop
+```
+for(k=1,i=1; k<n; i++) {
+    stmt;
+    k=k+i;
+}
+```
+Time complexity = O(root(n))
+
+5. GCD Program
+```
+while(m!=n) {
+    if(m>n) m = m-n;
+    else n = n-m;
+}
+```
+
+**Tracing this code**
+
+|m|n|
+|--|--|
+|||
