@@ -78,8 +78,10 @@ Algorithm sum(A, n)
 }
 ```
 
-1. Time Analysis - 'i' is incrementing 'n' times but the comparision is done for 'n+1' times ( i=0, i=1, i=2, .... i=n ) and i=0(Assignment) takes 1(constant) time<br>
-We consider only time taken in comparision so 'n+1'<br>
+1. Time Analysis - 'i' is incrementing 'n' times but the comparision is done for 'n+1' times ( i=0, i=1, i=2, .... i=n ).<br>
+> i=0 ( Assignment Operation ) takes 1( constant ) time, but
+we consider only time taken in comparision so time taken by for loop = (n+1) unit time.
+
 Total time taken = 1 + (n+1) + n + 1 = 2n+3.<br>
 Degree of this polynomial = 1 OR order of n = O(n)
 
@@ -362,3 +364,4 @@ So, Time Complexity = Order of (2n*log(n) + n) = ```O(n(log(n)))```
 | for(i=1; i<n; i=i*2) | O(log(n)) , base = 2 |
 | for(i=1; i<n; i=i*3) | O(log(n)) , base = 3 |
 | for(i=n; i>1; i=i/2) | O(log(n)) , base = 2 |
+| for(i=1; i*i<n; i++) | O(root(n)) |
