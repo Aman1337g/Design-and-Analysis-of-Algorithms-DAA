@@ -411,7 +411,7 @@ k times...
 Terminate when 'a' becomes greater than or equal to 'b' => 2^k>=b => 2^k=b => k = log(b) on base 2<br>
 So, time taken = f(b) = log(b) => f(n) = log(n) . So, order of n = O(n).
 
-3.
+3. 
 ```
 i = n;
 while(i>1) {
@@ -460,7 +460,7 @@ for(k=1,i=1; k<n; i++) {
 ```
 Time complexity = O(root(n))
 
-5. GCD Program
+5. a) GCD Program
 ```
 while(m!=n) {
     if(m>n) m = m-n;
@@ -470,6 +470,44 @@ while(m!=n) {
 
 **Tracing this code**
 
-|m|n|
-|--|--|
-|||
+|m|n||
+|--|--|--|
+|CASE 1|
+|3|3| Stops here|
+|---|---|
+|CASE 2||
+|6|3|
+|3|3| Stops here
+|---|---|
+|CASE 3||
+|14|3|
+|11|3|
+|8|3|
+|5|3|
+|2|3|
+|2|1|
+|1|1| Stops here
+
+Every time it runs approximately floor(n/2) times so 
+time complexity = O(n/2) = ```O(n)``` (maximum time)
+<br>And, minimum time = O(1) [when both numbers are equal]
+
+b) Equivalent for loop
+```
+for( ; m!=n; ) {
+    if(m>n) m = m-n;
+    else n = n-m;
+}
+```
+
+6.
+```
+Algorithm Test(n) {
+    if(n<5) printf("%d", n);                <--- 1 unit time
+    else {
+        for(i=0; i<n; i++) printf("%d", i); <--- n unit time
+    }
+}
+```
+If condition is true , time complexity = O(1) [Best Case]
+<br> If condition is false , time complexity = O(n) [Worst Case]
