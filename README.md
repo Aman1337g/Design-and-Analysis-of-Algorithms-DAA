@@ -366,7 +366,9 @@ So, Time Complexity = Order of (2n*log(n) + n) = ```O(n(log(n)))```
 | for(i=n; i>1; i=i/2) | O(log(n)) , base = 2 |
 | for(i=1; i*i<n; i++) | O(root(n)) |
 
-### 1.5.3 Time Complexity of While and if #3
+<br>
+
+## 1.5.3 Time Complexity of While and if #3
 
 1. a)
 ```
@@ -511,3 +513,42 @@ Algorithm Test(n) {
 ```
 If condition is true , time complexity = O(1) [Best Case]
 <br> If condition is false , time complexity = O(n) [Worst Case]
+
+<br>
+
+## 1.6 Types Of Functions
+
+
+|Time Complexity|Name| Example
+|--|--|--|
+|O(1)|Constant| f(n) = 1, 2782, 3 , 598, .... etc.
+|O(log(n))|Logarithmic| f(n) = log(n) on base 3 or base 2 etc.
+|O(n)|Linear|f(n) = 2n+3, 3n+1, 5n/2342, .... etc.
+|O(n^2)|Quadratic| f(n) = 2(n^2)+4, n^2+9, ... etc.
+|O(n^3)|Cubic| f(n) = 2(n^2)x4, nx2+9, ... etc.
+|O(2^n)|Exponential| f(n) = 2^n+4, (2^n)/328, ... etc. 
+|O(3^n)|Exponential|
+|O(n^n)|Exponential|
+
+<br>
+
+## 1.7 Comparing types of functions
+
+[**INCREASING WEIGHTAGE**]
+```
+1 < log(n) < root(n) < n < nlog(n) < n^2 < n^3 < ....... < 2^n < 3^n ....... < n^n
+```
+
+|log(n)|n|n^2|2^n|
+|--|--|--|--|
+|0|1|1|2|
+|1|2|4|4|
+|2|4|16|16|
+|3|8|64|256|
+|3.169|9|81|512|
+
+**Graph**
+> https://www.desmos.com/calculator/a0oswh1udb
+
+<br>
+
