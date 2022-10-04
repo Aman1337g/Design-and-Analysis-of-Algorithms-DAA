@@ -552,3 +552,96 @@ If condition is true , time complexity = O(1) [Best Case]
 
 <br>
 
+## 1.8.1 Asymptotic Notations - Big Oh , Omega , Theta #1
+
+|Notation|Function||
+|--|--|--|
+|(O) Big Oh|Upper Bound|
+|(Ω) Big Omega|Lower Bound|
+|(θ) Theta|Average Bound| **USEFUL**
+
+- Theta noation is most useful among the three notation , so why other notations ?<br>
+If we cannot specify the exact place of any function , then we can show the upper bound of the function.
+
+- Time Complexity of any function will be a multiple of one among these - 
+```
+1 < log(n) < root(n) < n < nlog(n) < n^2 < n^3 < ....... < 2^n < 3^n ....... < n^n
+```
+If we don't get time complexity as a multiple of these , then we may not be able to represent theta(θ) then we can go for big Oh(O) or omega(Ω) notation.
+
+### **Big Oh(O) Notation**
+
+<br>
+
+![Big-Oh](bigoh.jpg)
+
+<br>
+
+```The function f(n) = O(g(n)) iff there exists a +ve constant c and n0 such that f(n)<=c*g(n) for all n >= n0```
+
+eg- f(n) = 2n+3
+
+**CASE I** - for f(n) = 2n+3 , g(n) = 10n .<br>
+Now, 2n+3 <= 10n for all n>=1 , c=10. So , f(n) = O(g(n)) = O(n)<br>
+
+**CASE II** - for f(n) = 2n+3 , g(n) = 7n .<br>
+Now, 2n+3 <= 7n for all n>=1 , c=7. So , f(n) = O(g(n)) = O(n)<br> 
+
+> Now, g(n) can be (5n, 7n, 456n, 3353n , .... etc) +3 which statifies ```f(n) <= c*g(n)```
+
+**Here simplest method to get g(n) is to make both sides multiple of n**
+
+**CASE III** - for f(n) = 2n+3 , g(n) = 2n+3n = 5n , c=5<br>
+Now , for n=1 , 2n+3 <= 5n => 5<=5 (**Border Case**) for all n>=1. So , f(n) = O(n)
+
+<br>
+
+**CASE IV** - if we make g(n) as multiple of n^2<br>
+2n+3 <= 2n^2 + 3n^2 = 5n^2 for all n>=1 , c=5 . So f(n) is also = O(n^2) 
+
+So , ```n < nlog(n) < n^2 < n^3 < ....... < 2^n < 3^n ....... < n^n``` becomes upper bound of function. [```Big Oh```]
+
+And , ```1 < log(n) < root(n) < n``` are lower bound for f(n) = 2n+3.[```Omega```]
+
+And , average bound = ```O(n)```.[```theta```]
+
+> We try to write the closest function so ```f(n) = O(n)``` here. 
+
+### **Omega(Ω) Notation**
+
+<br>
+
+![Omega](omega.jpg)
+
+<br>
+
+```The function f(n) = Ω(g(n)) iff there exists a +ve constant c and n0 such that f(n)>=c*g(n) for all n >= n0```
+
+eg - f(n) = 2n+3
+
+**CASE I** - for f(n) = 2n+3 , g(n) = 1n .<br>
+Now, 2n+3 >= 1n for all n>=1 , c=1. So , f(n) = Ω(g(n)) = Ω(n)<br>
+
+We can write f(n) = Ω(log(n)) [```Lower Bound```].
+
+> But, we cannot write f(n) as Ω(n^2) or Ω(n^3) ,... as these are upper bounds.
+
+> We take the closest function so f(n) = Ω(n).
+
+### **Theta(θ) Notation**
+
+<br>
+
+![theta](theta.jpg)
+
+<br>
+
+```The function f(n) = θ(g(n)) iff there exists a +ve constant c1, c2 and n0 such that c1*g(n)<=f(n)>=c2*g(n) for all n >= n0```
+
+eg- f(n) = 2n+3
+
+1n <= 2n+3 <= 5n , for all n>=1 and c1=1 , c2=5 , g(n) = n
+
+> Here , g(n) cannot be either ```1 < log(n) < root(n)``` or ```nlog(n) < n^2 < n^3 < ....... < 2^n < 3^n ....... < n^n```.
+
+>**IMPORTANT** -  Don't MIX this with best case , average case and worst case of a function. We can use any notation for best case , average case and worst case of a function. We will see it later.
