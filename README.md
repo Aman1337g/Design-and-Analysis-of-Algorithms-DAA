@@ -684,3 +684,48 @@ So, **upper and lower bound of f(n) = ```O(nlog(n)) and Ω(1)```**
 
 <br>
 
+## 1.9 Properties of Asymptotic Notations
+
+### General Properties
+
+- ```If f(n) is O(g(n)) then a*f(n) is also O(g(n))```. **[a = constant]**
+
+eg - f(n) = 2*(n^2) + 5 is O(n^2)<br>
+then, 7 * f(n) = 7*(2*(n^2) + 5) = 14.(n^2) + 35 is O(n^2)
+
+> Applicable to all three notations.
+
+- **Reflexive Property** - ```if f(n) is given then f(n) = O(f(n))```.
+
+eg - If, f(n) = n^2 then f(n) = O(f(n)) = O(n^2).
+
+- **Transitive Property** - ```if f(n) is O(g(n)) and g(n) is O(h(n)) then f(n) = O(h(n))```.
+
+eg - f(n) = n , g(n) = n^2 , h(n) = n^3.<br>
+Here by observation , f(n) = O(g(n)) = O(n^2) , g(n) = O(h(n)) = O(n^3) , also f(n) = O(h(n)) = O(n^3).
+
+- **Symmetric Property** - ```if f(n) is θ(g(n)) then g(n) is θ(f(n))```.
+
+eg - f(n) = n^2 , g(n) = n^2.<br>
+Here by observation, f(n) = O(g(n)) and g(n) = O(f(n)).
+
+- **Transpose Property** - ```If f(n) = O(g(n)) then g(n) is Ω(f(n))```.
+
+eg - f(n) = n , g(n) = n^2.<br>
+Here , f(n) = n = O(g(n)) = O(n^2) and g(n) = n^2 = Ω(f(n)) = Ω(n).
+
+- ```If f(n) = O(g(n)) and f(n) = Ω(g(n)) then f(n) = θ(g(n)) also```.
+
+- ```If f(n) = O(g(n)) and d(n) = O(e(n)) then f(n)+d(n) = O(max(g(n), e(n)))```.
+
+eg - f(n) = n = O(n) and d(n) = n^2 = O(n^2)<br>
+Then by observation, f(n)+d(n) = O(max(n, n^2)) = O(n^2)
+
+- ```If f(n) = O(g(n)) and d(n) = O(e(n)) then f(n)*d(n) = O(g(n)*e(n))```.
+
+eg - f(n) = n = O(n) and d(n) = n^2 = O(n^2)<br>
+Then by observation, f(n)*d(n) = n^3 =  O(n * (n^2)) = O(n^3).
+
+<br>
+
+## 1.10.1 Comparison of Functions #1
