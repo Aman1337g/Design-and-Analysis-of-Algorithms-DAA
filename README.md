@@ -645,3 +645,42 @@ eg- f(n) = 2n+3
 > Here , g(n) cannot be either ```1 < log(n) < root(n)``` or ```nlog(n) < n^2 < n^3 < ....... < 2^n < 3^n ....... < n^n```.
 
 >**IMPORTANT** -  Don't MIX this with best case , average case and worst case of a function. We can use any notation for best case , average case and worst case of a function. We will see it later.
+
+<br>
+
+## 1.8.2 Asymptotic Notations - Big Oh - Omega - Theta #2
+
+**T.C. Order** 
+
+```1 < log(n) < root(n) < n < nlog(n) < n^2 < (n^2).log(n) n^3 < ..... < 2^n< 3^n ..... < n^n```
+
+eg - for function, f(n) = 2*(n^2) + 3n + 4
+
+2*(n^2) + 3n + 4 <= 2*(n^2) + 3*(n^2) + 4*(n^2)<br>
+=> 2*(n^2) + 3n + 4 <= 9*(n^2) , **where c = 9, g(n) = n^2, n>=1**<br>
+So, **Upper Bound for f(n) = O(g(n)) = ```O(n^2)```**
+
+And , 2*(n^2) + 3n + 4 >= 1*(n^2) => **Lower Bound, ```Ω(n^2)```**
+
+```So ,  1*(n^2) >= 2*(n^2) + 3n + 4 <= 9*(n^2)```<br>
+Hence, **tight bound ```θ(g(n)) = θ(n^2)```** 
+
+eg - f(n) = (n^2).log(n) + n
+ 
+Now, (n^2).log(n) <= (n^2).log(n) + n <= 10*(n^2).log(n)<br>
+So, **Upper, Lower, and Tight bound are ```O((n^2).log(n)), Ω((n^2).log(n)) and θ((n^2).log(n))```** respectively.
+
+eg - f(n) = n! = n*(n-1) * (n-2) * (n-3) * (n-4) * .... * 2 * 1
+
+Now, 1 * 1 * 1 * ... (n times) * 1 <= 1 * 2 * 3 * .... * n <= n * n * n * ... (n times) * n <br>
+=> 1 <= n! <= n^n <br>
+So , **upper and lower bounds are ```O(n^n) and Ω(1)``` respectively** . We ```cannot find tight bound``` here.
+
+eg - f(n) = log(n!) 
+
+Now, log(1) <= log(n!) <= log(n^n)<br>
+=>  log(1) <= log(n!) <= nlog(n)<br>
+So, **upper and lower bound of f(n) = ```O(nlog(n)) and Ω(1)```**
+
+<br>
+
