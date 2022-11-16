@@ -783,3 +783,41 @@ Hence, **f(n) > g(n)**.
 
 <br>
 
+## 1.10.2 Comparison of Functions #2
+
+eg - f(n) = n^log(n) and g(n) = 2^root(n)
+
+Taking log on both sides,<br>
+log(f(n)) = (log(n))^2 <br>
+log(g(n)) = root(n).log(2) = root(n)<br>
+
+Taking log on both sides again,<br>
+log(log(f(n))) = 2.log(log(n))<br>
+log(log(g(n))) = (1/2).log(n)
+
+By observation, for higher values of n , **f(n) < g(n)**
+
+eg - f(n) = 2^log(n) and g(n) = n^root(n)
+
+Taking log on both sides,<br>
+log(f(n)) = log(n).log(2) = log(n)<br>
+log(g(n)) = root(n).log(n)
+
+Hence, **f(n) < g(n)**
+
+eg - f(n) = 2n and g(n) = 3n
+
+Here, Asymptotically 2 and 3 are ignorable so , **f(n) = g(n)**
+
+eg - f(n) = 2^n and g(n) = 2^(2n)
+
+Taking log on both sides,<br>
+log(f(n)) = nlog(2) = n<br>
+log(g(n)) = 2nlog(2) = 2n
+
+Here we cannot say that f(n) = g(n) as we have applied log on both functions.<br>
+Also it is evident that f(n) = **2^n** and g(n) = 2^(2n) = **4^n**. So **f(n) < g(n)**.
+
+<br>
+
+## 1.11 Best Worst and Average Case Analysis 
