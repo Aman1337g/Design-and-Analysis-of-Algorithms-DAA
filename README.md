@@ -729,3 +729,57 @@ Then by observation, f(n)*d(n) = n^3 =  O(n * (n^2)) = O(n^3).
 <br>
 
 ## 1.10.1 Comparison of Functions #1
+
+Now, comparison can be between **time functions or space functions** .
+
+eg - for f(n) = n^2 and g(n) = n^3
+
+**Method 1** - Comparison of basis of value
+
+n | n^2 | n^3
+---|---|---
+ 2 | 4 | 8
+ 3 | 9 | 27
+ 4 | 16 | 64
+ 5 | 25 | 125
+
+By observation, it is clear that **n^2 < n^3**.
+
+**Method 2** - Taking log on both sides
+
+Now, 2log(n) < 3log(n). So, **n^2 < n^3**.
+
+### Properties of Logarithm
+
+1. logb(xy) = logbx + logby.
+2. logb(x/y) = logbx - logby.
+3. logb(x^n) = n logbx.          
+4. logbx = logax / logab. (Base Change Formula)
+5. a^logc(b) = b^logc(a)      
+6. If a^b = n then b = loga(n).
+
+> **Note:** log(XY) means log(Y) on base X.
+
+eg - f(n) = (n^2).log(n) and g(n) = n.(log(n))^10
+
+Taking log on both sides<br>
+log(f(n)) = 2logn + log(log(n))<br>
+And, log(g(n)) = log(n) + 10.log(log(n))
+
+Here, for higher values of n definitely 2log(n) will dominate log(n). So, **f(n) > g(n)**
+
+eg - f(n) = 3.(n)^root(n) and g(n) = 2^(root(n).log(n))
+
+Taking log on both sides,<br>
+log(f(n)) = log(3) + root(n).log(n)<br>
+log(g(n)) = root(n).log(n).log(2)
+
+By default we take log on base 2 in programming, so log(2) = log2(2) = 1
+
+Hence, f(n) = **3.(n)^root(n)** => log(f(n)) = **log(3) + root(n).log(n)**
+And,   g(n) = 2^(root(n).log(n)) => log(g(n)) = root(n).log(n).log(2) = **root(n).log(n)** => g(n) = **n^root(n)**
+
+Hence, **f(n) > g(n)**.
+
+<br>
+
