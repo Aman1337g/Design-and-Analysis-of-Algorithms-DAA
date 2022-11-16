@@ -821,3 +821,32 @@ Also it is evident that f(n) = **2^n** and g(n) = 2^(2n) = **4^n**. So **f(n) < 
 <br>
 
 ## 1.11 Best Worst and Average Case Analysis 
+
+**Linear Search**
+
+Array A
+                --------------------------------------------
+                | 8 | 6 | 12 | 5 | 9 | 7 | 4 | 3 | 16 | 18 |
+                --------------------------------------------
+                  0   1    2   3   4   5   6   7    8    9 
+
+1. Best Case - Searching key element present at first index => **B(n) = O(1)**.
+2. Worst Case - Searching key element at last index => **W(n) = O(n)**.
+3. Average Case - (all possible case time) / (no. of cases) = (1+2+3+....+n)/n = (n+1)/2 => **A(n) = O((n+1)/2) = O(n)**.
+
+Here , B(n) = 1 => B(n) = O(1) or Ω(1) or θ(1)<br>
+And , W(n) = n => W(n) = O(n) or Ω(n) or θ(n)
+
+**Binary Search Tree**
+
+                  20
+               /      \
+              10      30
+             /  \    /  \ 
+            5   15  25  40
+
+1. Best Case - Searching root element => B(n) = 1.
+2. Worst Case - Searching for leaf element => W(n) = log(n) [minimum worst case time] . **Worst case time depends on the height of the tree**.<br>
+[maximum worst case time] = n (for **right/left skewered binary tree**).
+
+<br>
