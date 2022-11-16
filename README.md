@@ -825,11 +825,12 @@ Also it is evident that f(n) = **2^n** and g(n) = 2^(2n) = **4^n**. So **f(n) < 
 **Linear Search**
 
 Array A<br>
-                --------------------------------------------<br>
-                | 8 | 6 | 12 | 5 | 9 | 7 | 4 | 3 | 16 | 18 |<br>
-                --------------------------------------------<br>
+```
+                --------------------------------------------
+                | 8 | 6 | 12 | 5 | 9 | 7 | 4 | 3 | 16 | 18 |
+                --------------------------------------------
                   0   1    2   3   4   5   6   7    8    9 
-
+```
 1. Best Case - Searching key element present at first index => **B(n) = O(1)**.
 2. Worst Case - Searching key element at last index => **W(n) = O(n)**.
 3. Average Case - (all possible case time) / (no. of cases) = (1+2+3+....+n)/n = (n+1)/2 => **A(n) = O((n+1)/2) = O(n)**.
