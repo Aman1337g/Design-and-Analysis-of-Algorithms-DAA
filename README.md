@@ -573,7 +573,7 @@ If we don't get time complexity as a multiple of these , then we may not be able
 
 <br>
 
-![Big-Oh](bigoh.jpg)
+![Big-Oh](Images/bigoh.jpg)
 
 <br>
 
