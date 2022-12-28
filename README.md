@@ -911,3 +911,42 @@ One of the key benefits of the divide and conquer approach is that it allows you
 
 Examples of divide and conquer algorithms include quicksort, merge sort, strassen's matrix multiplication and the Karatsuba algorithm for multiplying large numbers.
 > **Note :** The subproblem must also be of the same type as that of the parent problem to apply divide and conquor strategy. And we should have a method to combine the solutions to the subproblems into one.
+
+<br>
+
+## 2.1.1. Recurrence Relation (T(n) = T(n-1) + 1) #1
+
+In the field of algorithms and data structures, a common task is to find the solution of a recurrence relation, which is a way to express the value of a sequence in terms of its previous terms. There are several techniques that can be used to solve recurrence relations, including:
+- **Substitution method:** This method involves substituting the recurrence relation into itself repeatedly until the desired number of terms has been computed.
+- **Recursion tree method:** This method involves constructing a tree-like diagram that represents the recursive calls made by the recurrence relation. The solution is then obtained by summing the values at the leaves of the tree.
+- **Master theorem:** This theorem provides a general formula for solving recurrence relations of the form T(n) = aT(n/b) + f(n), where a and b are constants.
+- **Generating functions:** This method involves expressing the recurrence relation in terms of a generating function, which is a special type of function that can be used to generate the terms of a sequence.
+- **Iteration method:** This method involves iteratively applying the recurrence relation until the desired number of terms has been computed.
+
+Overall, the technique used to solve a recurrence relation will depend on the specific form of the recurrence relation and the desired level of accuracy.
+
+For example, 
+```c
+void Test(int n)            // Time function T(n)
+{
+    if(n>0) 
+    {
+        printf("%d", n);    //------> Time taken = 1    // 1
+        Test(n-1);          //------> Time taken = 1    // T(n-1)
+    }
+} 
+```
+![Recurrence1](Images/recurrence1.jpg)
+So , recurrence relation, T(n) = { 1, for n=0 and T(n-1)+1, for n>0 }<br>
+Now, T(n) = T(n-1) + 1   ----> 1<br>
+Using Substitution Method,<br>
+=> T(n-1) = T(n-2) + 1<br>
+Substituting in eq. 1 and so on ... for k times<br>
+T(n) = T(n-1) + 1 = (T(n-2) + 1) + 1 = T(n-2) + 2<br>
+=> ```T(n) = T(n-k) + k```<br>
+Assume n-k = 0 => n=k<br>
+T(n) = T(n-n) + n<br>
+=> T(n) = T(0) + n = 1 + n<br>
+So, ```time complexity = θ(n)```
+
+<br>
