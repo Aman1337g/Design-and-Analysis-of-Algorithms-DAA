@@ -611,7 +611,7 @@ And , average bound = ```O(n)```.[```theta```]
 
 <br>
 
-![Omega](omega.jpg)
+![Omega](Images/omega.jpg)
 
 <br>
 
@@ -632,7 +632,7 @@ We can write f(n) = Ω(log(n)) [```Lower Bound```].
 
 <br>
 
-![theta](theta.jpg)
+![theta](Images/theta.jpg)
 
 <br>
 
