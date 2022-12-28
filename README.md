@@ -897,3 +897,17 @@ Now, if we want to find the root of the set that element 4 belongs to, it will o
 
 <br>
 
+## 2. Divide And Conquor
+
+The divide and conquer strategy is a general algorithmic technique for solving problems by dividing them into smaller subproblems, solving the subproblems, and then combining the solutions to the subproblems to get the solution to the original problem. This technique can be used to solve a wide variety of problems, including sorting, searching, and optimization problems.
+
+Here's a general outline of the divide and conquer approach:
+
+- Divide the problem into smaller subproblems.
+- Solve the subproblems recursively, or solve them directly if they are small enough.
+- Combine the solutions to the subproblems to get the solution to the original problem.
+
+One of the key benefits of the divide and conquer approach is that it allows you to solve problems more efficiently by taking advantage of the parallelism inherent in the subproblems. This can be particularly useful when the subproblems can be solved independently, as it allows you to leverage the power of multiple processors or computers to solve the problem more quickly.
+
+Examples of divide and conquer algorithms include quicksort, merge sort, strassen's matrix multiplication and the Karatsuba algorithm for multiplying large numbers.
+> **Note :** The subproblem must also be of the same type as that of the parent problem to apply divide and conquor strategy. And we should have a method to combine the solutions to the subproblems into one.
