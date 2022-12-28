@@ -851,3 +851,49 @@ And , W(n) = n => W(n) = O(n) or Ω(n) or θ(n)
 [maximum worst case time] = n (for **right/left skewered binary tree**).
 
 <br>
+
+## 1.12 Disjoint Sets Data Structure - Weighted Union and Collapsing Find
+
+### **Contents**
+- Disjoint Sets and Operations
+- Detecting a cycle - disjoint sets are useful in detecting a cycle in non-directed graph or un-directed graph.
+- Graphical Representation
+- Array Representation
+- Weighted Union and Collapsing Find (time efficient operations on disjoint sets , based on ranks or weights)
+
+In computer science, a disjoint set is a data structure that is used to keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It is also known as a **union-find data structure**, and it supports two main operations:
+
+```find()```: This operation determines which subset a particular element is in. It takes an element as input and returns a representative element (also known as the root) of the subset that the element belongs to.
+
+```union()```: This operation merges two subsets into a single subset. It takes as input the roots of two subsets and combines them into a single subset.
+
+> In union operation, if the two vertices taken as inputs are in the same subset, then there is a cycle present.
+
+Disjoint sets are often used in graph theory and other areas of computer science to perform operations on groups of objects that are connected together. They can be used, for example, to find the connected components of a graph or to **implement Kruskal's algorithm** for finding the minimum spanning tree of a graph.
+
+### Collapsing Find
+
+Collapsing find is a technique that is used to improve the time complexity of the ```find()``` operation in a disjoint set data structure. It works by collapsing the paths from the element being queried to the root of the set into a single path, so that future queries on the same element will be faster.
+
+To implement collapsing find, the ```find()``` operation is modified to not only return the root of the set that the element belongs to, but also to update the pointers of all the intermediate nodes on the path from the element to the root so that they point directly to the root. This can significantly reduce the time required to perform the ```find()``` operation, as the path from the element to the root only needs to be traversed once.
+
+For example, consider the following disjoint set data structure implemented using a tree-based representation:
+```
+       1
+      / \
+     2   3
+    /   / \
+   4   5   6
+```
+Suppose we want to find the root of the set that element 4 belongs to. Without collapsing find, we would need to follow the pointers from 4 to 1, which takes two steps. With collapsing find, we can update the pointers so that element 4 directly points to the root, as shown below:
+```
+       1
+    /  \  \
+   2    3  4
+       / \
+      5   6
+```
+Now, if we want to find the root of the set that element 4 belongs to, it will only take a single step. This can significantly improve the performance of the find() operation, especially in cases where the elements are queried multiple times.
+
+<br>
+
