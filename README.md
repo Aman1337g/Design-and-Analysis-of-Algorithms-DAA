@@ -411,7 +411,7 @@ k times...
 | 2^k ||
 
 Terminate when 'a' becomes greater than or equal to 'b' => 2^k>=b => 2^k=b => k = log(b) on base 2<br>
-So, time taken = f(b) = log(b) => f(n) = log(n) . So, order of n = O(n).
+So, time taken = f(b) = log(b) => f(n) = log(n) . So, T.C. = order of log(n) = ```O(log(n))```.
 
 3. 
 ```
@@ -422,7 +422,7 @@ while(i>1) {
 }
 ```
 Let the loop runs for k times until i<=1 => n/(2^k) <= 1 => ```k = log(n) on base 2```
-So, time taken = f(n) = log(n) => ```O(log(n))``` 
+So, time taken = f(n) = log(n) => T.C = ```O(log(n))```.
 
 4. a)
 ```
