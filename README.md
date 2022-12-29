@@ -39,26 +39,26 @@ It is also a step by step procedure to solve a computational problem.<br>
 
 ## 1.3 How to Analyze an Algorithm
 
-An algorithm can be anlyzed on the basis of -
-1. Time - we get a time **function**.
-2. Space - memory space consumption.
-3. Network consumption - Nowadays , every application is either internet based , web based or cloud based so data transfer or network consumption is also an important criteria.
-4. Power consumption
-5. CPU registers - if developing programs for device drivers or system level programming then we also need to know how much CPU registers it is consuming
+An algorithm can be analyzed on the basis of -
+1. **Time** - we get a time **function**.
+2. **Space** - memory space consumption.
+3. **Network consumption** - Nowadays , every application is either internet based , web based or cloud based so data transfer or network consumption is also an important criteria.
+4. **Power consumption**
+5. **CPU registers** - if developing programs for device drivers or system level programming then we also need to know how much CPU registers it is consuming
 
 Consider an algorithm -
-```
+```c
 Algorithm Swap(a, b)
 {
-    temp = a;     <------ 1 unit time
-    a = b;        <------ 1    "
-    b = temp;     <------ 1    "
+    temp = a;     // <------ 1 unit time
+    a = b;        // <------ 1    "
+    b = temp;     // <------ 1    "
 }
 ```
-1. Time Analysis - Generally , we take every statement is consuming 1 unit of time.<br>
+1. **Time Analysis** - Generally , we take every statement is consuming 1 unit of time.<br>
 So , time taken = f(n) = 3 (constant) OR Order of 1 = O(1)
 
-2. Space Analysis - parameter used = a, b and local variable = temp<br>
+2. **Space Analysis** - we look for parameters used = a, b and local variable = temp<br>
 So , S(n) = 1+1+1 = 3 words (constant) OR Order of 1 = O(1)
 
 <br>
@@ -66,30 +66,30 @@ So , S(n) = 1+1+1 = 3 words (constant) OR Order of 1 = O(1)
 ## 1.4 Frequency Count Method
 
 Consider an algorithm -
-```
+```c
 Algorithm sum(A, n)
 {
-    s = 0;                 <---- 1 unit time
-    for(i=0 ; i<n; i++)    <---- n+1 unit time
+    s = 0;                 // <---- 1 unit time
+    for(i=0 ; i<n; i++)    // <---- n+1 unit time
     {
-        s = s + A[i];      <---- n unit time
+        s = s + A[i];      // <---- n unit time
     }
-    return s;              <---- 1 unit time
+    return s;              // <---- 1 unit time
 }
 ```
 
-1. Time Analysis - 'i' is incrementing 'n' times but the comparision is done for 'n+1' times ( i=0, i=1, i=2, .... i=n ).<br>
+1. **Time Analysis** - 'i' is incrementing 'n' times but the comparision is done for 'n+1' times ( i=0, i=1, i=2, .... i=n ).<br>
 > i=0 ( Assignment Operation ) takes 1( constant ) time, but
 we consider only time taken in comparision so time taken by for loop = (n+1) unit time.
 
 Total time taken = 1 + (n+1) + n + 1 = 2n+3.<br>
 Degree of this polynomial = 1 OR order of n = O(n)
 
-2. Space Analysis - Variable used are A, n, s, i and size of A is n words.<br>
+2. **Space Analysis** - Variable used are A, n, s, i and size of A is n words.<br>
 So , space consumed = n+1+1+1 = n+3 words OR order of n = O(n)
 
 Consider an another algorithm -
-```
+```c
 Algorithm add(A, B, n) 
 {
     for(i=0; i<n; i++)                  <------ (n+1) unit time
@@ -102,9 +102,9 @@ Algorithm add(A, B, n)
 }
 ```
 
-1. Time Analysis - f(n) = (n+1) + n*(n+1) + n*(n) = 2*(n)^2 + 2*n + 1 OR O(n^2)
+1. **Time Analysis** - f(n) = (n+1) + n*(n+1) + n*(n) = 2*(n)^2 + 2*n + 1 OR O(n^2)
 
-2. Space Analysis - 
+2. **Space Analysis** - 
 
     | Variables | Size |
     |---|---|
@@ -135,9 +135,9 @@ Algorithm multiply(A, B, n)
 }
 ```
 
-1. Time Analysis - f(n) = (n+1) + (n * (n+1)) + (n * n) + (n * (n) * (n+1)) + (n * n * n) = 2*(n)^3 + 3*(n)^2 + 2*n + 1 OR O(n^3)
+1. **Time Analysis** - f(n) = (n+1) + (n * (n+1)) + (n * n) + (n * (n) * (n+1)) + (n * n * n) = 2*(n)^3 + 3*(n)^2 + 2*n + 1 OR O(n^3)
 
-2. Space Analysis - 
+2. **Space Analysis** - 
 
     | Variables | Size |
     |---|---|
