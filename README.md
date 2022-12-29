@@ -949,4 +949,17 @@ T(n) = T(n-n) + n<br>
 => T(n) = T(0) + n = 1 + n<br>
 So, ```time complexity = θ(n)```
 
+### Table for different recurrence relations
+
+|Recurrence Relation **T(n)**|Time Complexity|
+|---|---|
+|T(n-1)+1|O(n)|
+|T(n-1)+n|O(n^2)|
+|T(n-1)+n^2|O(n^3)|
+|T(n-2)+1|O(n/2) = O(n)|
+|T(n-100)+n|O(n^2/100) = O(n^2)|
+|2T(n-1)+1|O(2^n)|
+|3T(n-1)+1|O(3^n)|
+|2T(n-1)+n|O(n*(2^n))|
+
 <br>
