@@ -961,5 +961,20 @@ So, ```time complexity = θ(n)```
 |2T(n-1)+1|O(2^n)|
 |3T(n-1)+1|O(3^n)|
 |2T(n-1)+n|O(n*(2^n))|
+|T(n/2)+1|O(log2(n))|
 
 <br>
+
+## 2.2. Master's Theorem For Decreasing Function
+
+In decreasing functions, we are having forms like **T(n) = T(n-1)+1**, **T(n)=2T(n-1)+n²** etc.
+
+So the general form for decreasing functions will be
+
+**T(n) = aT(n-b) + f(n)**, where a and b are the constants. a>0, b>0 and **f(n)=O(n^k)** where k≥0. a = Number of subproblems and b = The cost of dividing and merging the subproblems.
+
+To solve this type of recurrence relation there are 3 cases :
+
+**Case 1** If ```a=1```, then time complexity of the recurrence relation = T(n) =  ```O(n*(f(n))) = O(n^(k+1))```<br>
+**Case 2** If ```a>1```, then T.C. = ```O(f(n)*(a^(n/b))) = O(n^k * a^(n/b))```<br>
+**Case 3** If ```a<1```, then T.C. = ```O(f(n)) = O(n^k)```
