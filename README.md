@@ -978,3 +978,5 @@ To solve this type of recurrence relation there are 3 cases :
 **Case 1** If ```a=1```, then time complexity of the recurrence relation = T(n) =  ```O(n*(f(n))) = O(n^(k+1))```<br>
 **Case 2** If ```a>1```, then T.C. = ```O(f(n)*(a^(n/b))) = O(n^k * a^(n/b))```<br>
 **Case 3** If ```a<1```, then T.C. = ```O(f(n)) = O(n^k)```
+
+
